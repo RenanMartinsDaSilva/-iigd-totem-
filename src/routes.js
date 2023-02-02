@@ -1,14 +1,19 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
 import Home from './pages/Home';
-export default function AppRoutes() {
+import "./index.css";
 
-	return (
-		<Routes>
-			<Route
-				path="/"
-				element={<Home />}
-			/>
-		</Routes>
-	);
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const AppRoutes = () => {
+	const router = createBrowserRouter([
+		{
+			path: "/",
+			element: <Home/>,
+		},
+	]);
+	return <RouterProvider router={router} />
 }
+export default AppRoutes
